@@ -1,6 +1,6 @@
 ﻿,doi,country,city,region,lat,long,X
 1,http://dx.doi.org/10.1016/j.compscitech.2007.05.021,China,Beijing,,39.93084,116.38634,NA
-2,http://dx.doi.org/10.1016/j.compscitech.2007.05.021,France,Chatenay Malabry Cedex,,48.76643,48.76643,NA
+2,http://dx.doi.org/10.1016/j.compscitech.2007.05.021,France,Chatenay Malabry Cedex,,48.76643,2.2775316,NA
 3,http://dx.doi.org/10.1016/j.jeurceramsoc.2007.02.082,Finland,Oulu,,65.01265,25.47139,NA
 4,http://dx.doi.org/10.1016/j.jeurceramsoc.2007.02.082,Finland,Rajamaki,,60.52846,24.75442,NA
 5,http://dx.doi.org/10.1002/adma.200801758,China,Kowloon,Hong Kong,22.3116452,114.1767885,NA
@@ -13,21 +13,21 @@
 12,http://dx.doi.org/10.1109/TDEI.2009.4815189,India,Bangalore,,12.9791198,77.5912997,NA
 13,http://dx.doi.org/10.1109/ECTC.2004.1319391,USA,Atlanta,GA,33.7489924,-84.3902644,NA
 14,http://dx.doi.org/10.1007/s10853-006-0331-1,USA,La Jolla,CA,32.83259,-117.2716839,NA
-15,http://dx.doi.org/10.1007/s10853-006-0331-1,USA,Troy,NY,42.728867,42.728867,NA
+15,http://dx.doi.org/10.1007/s10853-006-0331-1,USA,Troy,NY,42.728867,-73.663285,NA
 16,http://dx.doi.org/10.1007/s10853-006-0331-1,Sweden,Vasteras,,65.1720218,17.934883,NA
 17,http://dx.doi.org/10.1002/app.11475,India,Kharagpur,,22.3183986,87.2583576,NA
 18,http://dx.doi.org/10.1016/j.compositesa.2005.02.006,Israel,Rehovot,,31.8952532,34.8105616,NA
 19,http://dx.doi.org/10.1016/j.compositesa.2005.02.006,Germany,Hamburg,,53.550341,10.000654,NA
 20,http://dx.doi.org/10.1016/S0009-2614(01)00186-5,Singapore,,,1.357107,103.8194992,NA
 21,http://dx.doi.org/10.1063/1.2034654,Australia,Melbourne,Victoria,-37.8142176,144.9631608,NA
-22,http://dx.doi.org/10.1088/0022-3727/38/2/005,USA,Troy,NY,42.728867,42.728867,NA
+22,http://dx.doi.org/10.1088/0022-3727/38/2/005,USA,Troy,NY,42.728867,-73.663285,NA
 23,http://dx.doi.org/10.1109/CEIDP.2008.4772933,Japan,Toyohashi,,34.769123,137.391461,NA
 24,http://dx.doi.org/10.1109/CEIDP.2008.4772933,Japan,Hitachi,,36.5991225,140.6504604,NA
-25,http://dx.doi.org/10.1109/T-DEI.2008.4446750,USA,Troy,NY,42.728867,42.728867,NA
+25,http://dx.doi.org/10.1109/T-DEI.2008.4446750,USA,Troy,NY,42.728867,-73.663285,NA
 26,http://dx.doi.org/10.1016/j.compscitech.2009.12.014,India,Bangalore,,12.9791198,77.5912997,NA
-27,http://dx.doi.org/10.1109/CEIDP.2009.5377895,USA,Troy,NY,42.728867,42.728867,NA
+27,http://dx.doi.org/10.1109/CEIDP.2009.5377895,USA,Troy,NY,42.728867,-73.663285,NA
 28,http://dx.doi.org/10.1109/CEIDP.2009.5377895,USA,Dayton,OH,39.7589478,-84.1916069,NA
-29,http://dx.doi.org/10.1109/TDEI.2010.5658218,USA,Troy,NY,42.728867,42.728867,NA
+29,http://dx.doi.org/10.1109/TDEI.2010.5658218,USA,Troy,NY,42.728867,-73.663285,NA
 30,http://dx.doi.org/10.1109/TDEI.2010.5658218,Sweden,Vasteras,,65.1720218,17.934883,NA
 31,http://dx.doi.org/10.1039/c1jm12903a,China,Shanghai,,31.2322758,121.4692071,NA
 32,http://dx.doi.org/10.1002/pola.21650,Taiwan,Yun-Lin,,23.6990775,120.5245511,NA
@@ -46,25 +46,25 @@
 45,http://dx.doi.org/10.1002/macp.201000138,Spain,San Sebastian,,43.3224219,-1.9838889,NA
 46,http://dx.doi.org/10.1021/cm4010486,China,Shanghai,,31.2322758,121.4692071,NA
 47,http://dx.doi.org/10.1080/00914030701729057,Egypt,Cairo,,30.0443879,31.2357257,NA
-48,http://dx.doi.org/10.3390/polym4010187,USA,Troy,NY,42.728867,42.728867,NA
+48,http://dx.doi.org/10.3390/polym4010187,USA,Troy,NY,42.728867,-73.663285,NA
 49,http://dx.doi.org/10.3390/polym4010187,USA,Columbia,SC,34.0007493,-81.0343313,NA
 50,http://dx.doi.org/10.3390/polym4010187,Sweden,Vasteras,,65.1720218,17.934883,NA
-51,http://dx.doi.org/10.1016/j.polymer.2013.05.033,USA,Troy,NY,42.728867,42.728867,NA
+51,http://dx.doi.org/10.1016/j.polymer.2013.05.033,USA,Troy,NY,42.728867,-73.663285,NA
 52,http://dx.doi.org/10.1016/j.polymer.2013.05.033,USA,Columbia,SC,34.0007493,-81.0343313,NA
 53,http://dx.doi.org/10.1016/j.polymer.2013.05.033,Sweden,Vasteras,,65.1720218,17.934883,NA
 54,http://dx.doi.org/10.1021/jp409474k,China,Beijing,,39.93084,116.38634,NA
-55,http://dx.doi.org/10.1109/TDEI.2013.6508768,USA,Troy,NY,42.728867,42.728867,NA
-56,http://dx.doi.org/10.1039/C1JM13093E,USA,Troy,NY,42.728867,42.728867,NA
+55,http://dx.doi.org/10.1109/TDEI.2013.6508768,USA,Troy,NY,42.728867,-73.663285,NA
+56,http://dx.doi.org/10.1039/C1JM13093E,USA,Troy,NY,42.728867,-73.663285,NA
 57,http://dx.doi.org/10.1039/C1JM13093E,USA,Columbia,SC,34.0007493,-81.0343313,NA
 58,http://dx.doi.org/10.1109/TDEI.2014.004415,Finland,Jyvaskyla,,62.23633957,25.73222351,NA
-59,http://dx.doi.org/10.1109/TDEI.2014.004415,USA,Troy,NY,42.728867,42.728867,NA
+59,http://dx.doi.org/10.1109/TDEI.2014.004415,USA,Troy,NY,42.728867,-73.663285,NA
 60,http://dx.doi.org/10.1109/TDEI.2014.004415,USA,Columbia,SC,34.0007493,-81.0343313,NA
 61,http://dx.doi.org/10.1109/TDEI.2014.004415,Sweden,Vasteras,,65.1720218,17.934883,NA
-62,http://dx.doi.org/10.1109/TDEI.2012.6215100,USA,Troy,NY,42.728867,42.728867,NA
+62,http://dx.doi.org/10.1109/TDEI.2012.6215100,USA,Troy,NY,42.728867,-73.663285,NA
 63,http://dx.doi.org/10.1109/TDEI.2012.6215100,Sweden,Vasteras,,65.1720218,17.934883,NA
 64,http://dx.doi.org/10.1038/nmat2404,USA,New York,NY,40.7127281,-74.0060152,NA
 65,http://dx.doi.org/10.1038/nmat2404,USA,Columbia,SC,34.0007493,-81.0343313,NA
-66,http://dx.doi.org/10.1038/nmat2404,USA,Troy,NY,42.728867,42.728867,NA
+66,http://dx.doi.org/10.1038/nmat2404,USA,Troy,NY,42.728867,-73.663285,NA
 67,http://dx.doi.org/10.1038/nmat2404,USA,Princeton,NJ,40.3492744,-74.6592958,NA
 68,http://dx.doi.org/10.1038/nmat2404,USA,Austin,TX,30.2711286,-97.7436995,NA
 69,http://dx.doi.org/10.1038/nmat2404,USA,Argonne,IL,41.7091409,-87.9786221,NA
@@ -72,17 +72,17 @@
 71,http://dx.doi.org/10.1038/nmat2404,USA,Gaithersburg,MD,39.1434406,-77.2013705,NA
 72,http://dx.doi.org/10.1021/ma902072d,USA,New York,NY,40.7127281,-74.0060152,NA
 73,http://dx.doi.org/10.1021/ma902072d,USA,Columbia,SC,34.0007493,-81.0343313,NA
-74,http://dx.doi.org/10.1021/ma902072d,USA,Troy,NY,42.728867,42.728867,NA
+74,http://dx.doi.org/10.1021/ma902072d,USA,Troy,NY,42.728867,-73.663285,NA
 75,http://dx.doi.org/10.1021/ma902072d,USA,Argonne,IL,41.7091409,-87.9786221,NA
 76,http://dx.doi.org/10.1021/ma902072d,USA,University Park,PA,40.8087493,-77.8585662,NA
 77,http://dx.doi.org/10.1021/ma902072d,USA,Gaithersburg,MD,39.1434406,-77.2013705,NA
-78,http://dx.doi.org/10.1016/j.compscitech.2005.10.004,USA,Troy,NY,42.728867,42.728867,NA
+78,http://dx.doi.org/10.1016/j.compscitech.2005.10.004,USA,Troy,NY,42.728867,-73.663285,NA
 79,http://dx.doi.org/10.1016/j.compscitech.2005.10.004,USA,Evanston,IL,42.0447388,-87.6930459,NA
 80,http://dx.doi.org/10.1016/j.compscitech.2005.10.004,USA,Lexington,KY,38.0464066,-84.4970393,NA
-81,http://dx.doi.org/10.1109/TDEI.2005.1511089,USA,Troy,NY,42.728867,42.728867,NA
+81,http://dx.doi.org/10.1109/TDEI.2005.1511089,USA,Troy,NY,42.728867,-73.663285,NA
 82,http://dx.doi.org/10.1109/TDEI.2005.1511089,USA,Palo Alto,CA,37.4443293,-122.1598465,NA
-83,http://dx.doi.org/10.1007/s10853-006-0413-0,USA,Troy,NY,42.728867,42.728867,NA
-84,http://dx.doi.org/10.1016/j.compscitech.2008.01.009,USA,Troy,NY,42.728867,42.728867,NA
+83,http://dx.doi.org/10.1007/s10853-006-0413-0,USA,Troy,NY,42.728867,-73.663285,NA
+84,http://dx.doi.org/10.1016/j.compscitech.2008.01.009,USA,Troy,NY,42.728867,-73.663285,NA
 85,http://dx.doi.org/10.1016/j.compscitech.2008.01.009,Sweden,Vasteras,,65.1720218,17.934883,NA
 86,http://dx.doi.org/10.1039/b514182f,USA,Atlanta,GA,33.7489924,-84.3902644,NA
 87,http://dx.doi.org/10.1063/1.1996842,China,Beijing,,39.9020803,116.7185213,NA
@@ -121,12 +121,12 @@
 120,http://dx.doi.org/10.1021/nn100661a,USA,Evanston,IL,42.0447388,-87.6930459,NA
 121,http://dx.doi.org/10.1016/j.compscitech.2006.12.012,Norway,Trondheim,,63.4305658,10.3951929,NA
 122,http://dx.doi.org/10.1016/j.compscitech.2006.12.012,Sweden,Skelleftea,,64.7520185,20.959339,NA
-123,http://dx.doi.org/10.1016/j.compscitech.2009.12.010,USA,Troy,NY,42.728867,42.728867,NA
+123,http://dx.doi.org/10.1016/j.compscitech.2009.12.010,USA,Troy,NY,42.728867,-73.663285,NA
 124,http://dx.doi.org/10.1016/j.compscitech.2009.12.010,USA,Evanston,IL,42.0447388,-87.6930459,NA
 125,http://dx.doi.org/10.1021/ma800298x,USA,Evanston,IL,42.0447388,-87.6930459,NA
 126,http://dx.doi.org/10.1016/j.carbon.2008.02.008,USA,Dayton,OH,39.7589478,-84.1916069,NA
 127,http://dx.doi.org/10.1021/am9000503,South Korea,Daejeon,,36.3496,127.3848,NA
-128,http://dx.doi.org/10.1038/nmat1447,USA,Troy,NY,42.728867,42.728867,NA
+128,http://dx.doi.org/10.1038/nmat1447,USA,Troy,NY,42.728867,-73.663285,NA
 129,http://dx.doi.org/10.1038/nmat1447,South Korea,Kyungbuk,,36.0189315,129.3429384,NA
 130,http://dx.doi.org/10.1007/s10854-005-6454-3,South Korea,Daejeon,,36.3496,127.3848,NA
 131,http://dx.doi.org/10.1016/j.compscitech.2014.08.025,France,Lorient,,47.7477336,-3.3660907,NA
@@ -135,19 +135,19 @@
 134,http://dx.doi.org/10.1016/j.compscitech.2014.08.025,USA,Chicago,IL,41.8755616,-87.6244212,NA
 135,http://dx.doi.org/10.1016/j.compscitech.2014.08.025,Poland,Gdansk,,54.361434,18.6282185,NA
 136,http://dx.doi.org/10.1002/pc.22306,China,Changchun,,43.8130735,125.3171216,NA
-137,http://dx.doi.org/10.1016/S0167-577X(01)00626-7,USA,Troy,NY,42.728867,42.728867,NA
+137,http://dx.doi.org/10.1016/S0167-577X(01)00626-7,USA,Troy,NY,42.728867,-73.663285,NA
 138,http://dx.doi.org/10.1039/C4RA14538K,China,Guangzhou,,23.1301964,113.2592945,NA
 139,http://dx.doi.org/10.1002/polb.20297,USA,Albuquerque,NM,35.0841034,-106.6509851,NA
-140,http://dx.doi.org/10.1002/polb.20297,USA,Troy,NY,42.728867,42.728867,NA
+140,http://dx.doi.org/10.1002/polb.20297,USA,Troy,NY,42.728867,-73.663285,NA
 141,http://dx.doi.org/10.1016/j.polymer.2012.12.066,Canada,Montreal,QC,45.4972159,-73.6103642,NA
 142,http://dx.doi.org/10.1016/j.polymer.2012.12.066,Canada,Boucherville,QC,45.60429001,-73.45358276,NA
 143,http://dx.doi.org/10.1016/j.matdes.2011.12.034,India,Bangalore,,12.9791198,77.5912997,NA
 144,http://dx.doi.org/10.1002/polb.21695,USA,Ithaca,NY,42.4396039,-76.4968019,NA
-145,http://dx.doi.org/10.1002/pc.10497,USA,Troy,NY,42.728867,42.728867,NA
-146,http://dx.doi.org/10.1088/0957-4484/16/6/016,USA,Troy,NY,42.728867,42.728867,NA
+145,http://dx.doi.org/10.1002/pc.10497,USA,Troy,NY,42.728867,-73.663285,NA
+146,http://dx.doi.org/10.1088/0957-4484/16/6/016,USA,Troy,NY,42.728867,-73.663285,NA
 147,http://dx.doi.org/10.1088/0957-4484/16/6/016,Sweden,Vasteras,,65.1720218,17.934883,NA
 148,http://dx.doi.org/10.1088/0957-4484/16/6/016,Canada,Ottawa,ON,45.421106,-75.690308,NA
-149,http://dx.doi.org/10.1002/polb.20926,USA,Troy,NY,42.728867,42.728867,NA
+149,http://dx.doi.org/10.1002/polb.20926,USA,Troy,NY,42.728867,-73.663285,NA
 150,http://dx.doi.org/10.1016/j.synthmet.2006.09.003,Brazil,Campinas,,-22.90556,-47.06083,NA
 151,http://dx.doi.org/10.1016/j.synthmet.2006.09.003,Brazil,Sao Jose dos Campos,,-23.1860383,-45.8866816,NA
 152,http://dx.doi.org/10.1016/j.eurpolymj.2008.06.015,Taiwan,Chung Li,,24.14383,120.67951,NA
@@ -158,40 +158,40 @@
 157,http://dx.doi.org/10.1016/j.polymer.2011.02.003,Malaysia,Batu Pahat,,1.9083423,102.9956226,NA
 158,http://dx.doi.org/10.1016/j.polymer.2011.02.003,Taiwan,Tainan,,22.9912348,120.184982,NA
 159,http://dx.doi.org/10.1016/j.polymer.2011.02.003,Egypt,Mansoura,,31.037566,31.38649,NA
-160,http://dx.doi.org/10.1063/1.1563306,USA,Troy,NY,42.728867,42.728867,NA
+160,http://dx.doi.org/10.1063/1.1563306,USA,Troy,NY,42.728867,-73.663285,NA
 161,http://dx.doi.org/10.1039/c1jm11434d,China,Hefei,,31.8228094,117.2218033,NA
 162,http://dx.doi.org/10.1039/c1jm11434d,China,Suzhou,,31.3016935,120.5810725,NA
 163,http://dx.doi.org/10.1016/j.compscitech.2004.01.024,Germany,Hamburg,,53.550341,10.000654,NA
-164,http://dx.doi.org/10.1002/app.44347,USA,Troy,NY,42.728867,42.728867,NA
+164,http://dx.doi.org/10.1002/app.44347,USA,Troy,NY,42.728867,-73.663285,NA
 165,http://dx.doi.org/10.1002/app.44347,USA,Columbia,SC,34.0007493,-81.0343313,NA
 166,http://dx.doi.org/10.1002/app.44347,Sweden,Vasteras,,65.1720218,17.934883,NA
 167,http://dx.doi.org/10.1016/j.msec.2012.04.005,Taiwan,Taipei,,25.0375198,121.5636796,NA
 168,http://dx.doi.org/10.1016/j.msec.2012.04.005,Italy,Torino,,45.0677551,7.6824892,NA
-169,http://dx.doi.org/10.1002/adma.201200827,USA,Troy,NY,42.728867,42.728867,NA
+169,http://dx.doi.org/10.1002/adma.201200827,USA,Troy,NY,42.728867,-73.663285,NA
 170,http://dx.doi.org/10.1002/adma.201200827,Sweden,Vasteras,,65.1720218,17.934883,NA
-171,http://dx.doi.org/10.1016/j.compscitech.2008.07.010,USA,Troy,NY,42.728867,42.728867,NA
+171,http://dx.doi.org/10.1016/j.compscitech.2008.07.010,USA,Troy,NY,42.728867,-73.663285,NA
 172,http://dx.doi.org/10.1016/j.compscitech.2008.07.010,Sweden,Vasteras,,65.1720218,17.934883,NA
-173,http://dx.doi.org/10.1109/T-DEI.2008.4446751,USA,Troy,NY,42.728867,42.728867,NA
-174,http://dx.doi.org/10.1016/j.matlet.2004.10.036,USA,Troy,NY,42.728867,42.728867,NA
-175,http://dx.doi.org/10.1103/PhysRevLett.97.075505,USA,Troy,NY,42.728867,42.728867,NA
+173,http://dx.doi.org/10.1109/T-DEI.2008.4446751,USA,Troy,NY,42.728867,-73.663285,NA
+174,http://dx.doi.org/10.1016/j.matlet.2004.10.036,USA,Troy,NY,42.728867,-73.663285,NA
+175,http://dx.doi.org/10.1103/PhysRevLett.97.075505,USA,Troy,NY,42.728867,-73.663285,NA
 176,http://dx.doi.org/10.1103/PhysRevLett.97.075505,USA,Argonne,IL,41.7091409,-87.9786221,NA
 177,http://dx.doi.org/10.1103/PhysRevLett.97.075505,USA,DeKalb,IL,41.8903447,-88.7713953,NA
-178,http://dx.doi.org/10.1109/CEIDP.2006.312055,USA,Troy,NY,42.728867,42.728867,NA
-179,http://dx.doi.org/10.1109/CEIDP.2009.5377878,USA,Troy,NY,42.728867,42.728867,NA
-180,http://dx.doi.org/10.1109/CEIDP.2012.6378717,USA,Troy,NY,42.728867,42.728867,NA
+178,http://dx.doi.org/10.1109/CEIDP.2006.312055,USA,Troy,NY,42.728867,-73.663285,NA
+179,http://dx.doi.org/10.1109/CEIDP.2009.5377878,USA,Troy,NY,42.728867,-73.663285,NA
+180,http://dx.doi.org/10.1109/CEIDP.2012.6378717,USA,Troy,NY,42.728867,-73.663285,NA
 181,http://dx.doi.org/10.1109/CEIDP.2012.6378717,Sweden,Vasteras,,65.1720218,17.934883,NA
 182,http://dx.doi.org/10.1016/j.polymertesting.2016.12.021,China,Mianyang,,31.458932,104.750108,NA
 183,http://dx.doi.org/10.1021/acsami.6b06650,China,Shanghai,,31.2322758,121.4692071,NA
-184,http://dx.doi.org/10.1021/acsami.6b06650,USA,Troy,NY,42.728867,42.728867,NA
+184,http://dx.doi.org/10.1021/acsami.6b06650,USA,Troy,NY,42.728867,-73.663285,NA
 185,http://dx.doi.org/10.1021/acsami.6b06650,China,Beijing,,39.9020803,116.7185213,NA
-186,http://dx.doi.org/10.1109/ceidp.2014.6995891,USA,Troy,NY,42.728867,42.728867,NA
+186,http://dx.doi.org/10.1109/ceidp.2014.6995891,USA,Troy,NY,42.728867,-73.663285,NA
 187,http://dx.doi.org/10.1109/ceidp.2014.6995891,USA,Columbia,SC,34.0007493,-81.0343313,NA
 188,http://dx.doi.org/10.1109/ceidp.2014.6995891,Sweden,Vasteras,,65.1720218,17.934883,NA
-189,http://dx.doi.org/10.1109/CEIDP.2008.4772808,USA,Troy,NY,42.728867,42.728867,NA
+189,http://dx.doi.org/10.1109/CEIDP.2008.4772808,USA,Troy,NY,42.728867,-73.663285,NA
 190,http://dx.doi.org/10.1109/CEIDP.2008.4772808,USA,Dayton,OH,39.7589478,-84.1916069,NA
-191,http://dx.doi.org/10.1109/ICACACT.2014.7223517,USA,Troy,NY,42.728867,42.728867,NA
+191,http://dx.doi.org/10.1109/ICACACT.2014.7223517,USA,Troy,NY,42.728867,-73.663285,NA
 192,http://dx.doi.org/10.1109/ICACACT.2014.7223517,USA,Columbia,SC,34.0007493,-81.0343313,NA
-193,http://dx.doi.org/10.1109/CEIDP.2011.6232738,USA,Troy,NY,42.728867,42.728867,NA
+193,http://dx.doi.org/10.1109/CEIDP.2011.6232738,USA,Troy,NY,42.728867,-73.663285,NA
 194,http://dx.doi.org/10.1109/CEIDP.2011.6232738,Sweden,Vasteras,,65.1720218,17.934883,NA
 195,http://dx.doi.org/10.1016/j.carbon.2014.01.031,Canada,Toronto,,43.6534817,-79.3839347,NA
 196,http://dx.doi.org/10.1016/j.carbon.2014.01.031,Germany,Dresden,,51.0493286,13.7381437,NA
@@ -323,7 +323,7 @@
 322,http://dx.doi.org/10.1021/acs.macromol.8b02071,USA,Evanston,IL,42.0447388,-87.6930459,NA
 323,http://dx.doi.org/10.1021/acs.macromol.7b00702,Canada,Calgary,AB,51.0534234,-114.0625892,NA
 324,http://dx.doi.org/10.1021/acs.macromol.8b02646,USA,Philadelphia,PA,39.9527237,-75.1635262,NA
-325,http://dx.doi.org/10.1021/acsmacrolett.9b00619,USA,Troy,NY,42.728867,42.728867,NA
+325,http://dx.doi.org/10.1021/acsmacrolett.9b00619,USA,Troy,NY,42.728867,-73.663285,NA
 326,http://dx.doi.org/10.1021/acsmacrolett.9b00619,USA,New York,NY,40.7127281,-74.0060152,NA
 327,http://dx.doi.org/10.1021/acsmacrolett.9b00619,USA,Columbia,SC,34.0007493,-81.0343313,NA
 328,http://dx.doi.org/10.1021/acsmacrolett.9b00619,USA,Burlington,VT,44.4761601,-73.212906,NA
@@ -333,7 +333,7 @@
 332,http://dx.doi.org/10.1021/acs.macromol.9b01380,Spain,Donostia-San Sebastian,,43.3224219,-1.9838889,NA
 333,http://dx.doi.org/10.1021/acs.macromol.9b01380,USA,Columbia,SC,34.0007493,-81.0343313,NA
 334,http://dx.doi.org/10.1021/acs.macromol.9b01380,France,Gif-Sur-Yvette,,48.7018823,2.134529,NA
-335,http://dx.doi.org/10.1021/ma302281b,USA,Troy,NY,42.728867,42.728867,NA
+335,http://dx.doi.org/10.1021/ma302281b,USA,Troy,NY,42.728867,-73.663285,NA
 336,http://dx.doi.org/10.1021/ma302281b,USA,Evanston,IL,42.0447388,-87.6930459,NA
 337,http://dx.doi.org/10.1016/j.compscitech.2011.02.012,Iran,Tehran,,35.6892523,51.3896004,NA
 338,http://dx.doi.org/10.1109/TDEI.2019.008572,China,Xian,,34.3430507,108.9352154,NA
