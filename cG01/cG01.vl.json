@@ -1,0 +1,190 @@
+{
+  "data": {"url": "Caltech2Dabridged.csv"},
+  "title":{"text":["Instructions: Click-drag/mousewheel to create or move around a selection brush, SHIFT+click-drag/mousewheel to translate/zoom. "],
+            "orient":"bottom", "dy":15},
+  "transform": [
+    {
+      "filter": "datum.normBG > 0.25"
+    },
+    {
+      "sample": 2500
+    }
+  ],
+  "hconcat":[
+    {
+      
+      "vconcat": [{
+        "width":250,
+        "selection": {
+          "propbrush": {"type": "interval", "on":"[mousedown[!event.shiftKey],mouseup] > mousemove",
+                     "translate": "[mousedown[!event.shiftKey],mouseup] > mousemove", "zoom":"wheel![!event.shiftKey]"},
+          "myzoom": {"type":"interval","bind":"scales", "on":"[mousedown[event.shiftKey],mouseup] > mousemove",
+                     "translate": "[mousedown[event.shiftKey],mouseup] > mousemove", "zoom":"wheel![event.shiftKey]"}
+        },
+        "transform": [
+          {"filter": {"selection":"BGbrush"}}
+        ],
+        "mark": {"type":"point", "filled":true, "opacity":0.5},
+        "encoding": {
+          "x": {"field": "moduluseff", "type": "quantitative", "scale":{"type": "linear", "domain":[-200000000,2200000000]},
+                "axis":{"title":"Effective Young's modulus (Pa)", "format":"e",
+                  "titleFontSize": 16, "labelFontSize": 14, "labelBound": 1}},
+          "y": {"field": "poissoneff", "type": "quantitative","scale":{"domain":[-0.8,1.4]},
+                "axis":{"title":"Effective Poisson's ratio",
+                  "titleFontSize": 16, "labelFontSize": 14}},
+          "color":{
+            "condition":{
+              "selection":"propbrush"
+            },
+            "value":"#ccc"
+          }
+        }
+      }, {
+        "width":250,
+        "transform": [
+          {"filter": {"selection": "propbrush"}}
+        ],
+        "selection": {
+          "BGbrush": {"type": "interval", "on":"[mousedown[!event.shiftKey],mouseup] > mousemove",
+                     "translate": "[mousedown[!event.shiftKey],mouseup] > mousemove", "zoom":"wheel![!event.shiftKey]"},
+          "myzoom": {"type":"interval","bind":"scales", "on":"[mousedown[event.shiftKey],mouseup] > mousemove",
+                     "translate": "[mousedown[event.shiftKey],mouseup] > mousemove", "zoom":"wheel![event.shiftKey]"}
+        },
+        "mark": {"type":"point", "filled":true, "opacity":0.5},
+        "encoding": {
+          "y": {
+            "field": "normBG", "type": "quantitative", "axis":{"title":"Normalized Band Gap Width",
+            "titleFontSize": 16, "labelFontSize": 14},
+            "scale": {"domain":[0,1.8]}
+          },
+          "x":{
+            "field": "bandCenter", "type": "quantitative", "axis":{"title":"Band Gap Center Frequency",
+            "titleFontSize": 16, "labelFontSize": 14, "labelBound": 1},
+            "scale": {"domain":[0,12000]}
+          },
+          "color":{
+            "condition":{
+              "selection":"BGbrush"
+            },
+            "value":"#ccc"
+          }
+          
+        }
+      }]
+    },
+    {
+      
+      "height":500,
+      
+      "transform": [
+        {
+          "filter":{"and":[{"selection": "propbrush"},{"selection": "BGbrush"}]}
+        },
+        {
+          "sample": 500
+        },
+        {
+          "calculate": "replace(datum.GeomSTRING,/0/g,'□')", "as": "GS"
+        },
+        {
+          "calculate": "replace(datum.GS,/1/g,'■')", "as": "GS0"
+        },
+        {
+          "calculate": "substring(datum.GS0,0,10)", "as": "GS1"
+        },
+        {
+          "calculate": "substring(datum.GS0,10,20)", "as": "GS2"
+        },
+        {
+          "calculate": "substring(datum.GS0,20,30)", "as": "GS3"
+        },
+        {
+          "calculate": "substring(datum.GS0,30,40)", "as": "GS4"
+        },
+        {
+          "calculate": "substring(datum.GS0,40,50)", "as": "GS5"
+        },
+        {
+          "calculate": "substring(datum.GS0,50,60)", "as": "GS6"
+        },
+        {
+          "calculate": "substring(datum.GS0,60,70)", "as": "GS7"
+        },
+        {
+          "calculate": "substring(datum.GS0,70,80)", "as": "GS8"
+        },
+        {
+          "calculate": "substring(datum.GS0,80,90)", "as": "GS9"
+        },
+        {
+          "calculate": "substring(datum.GS0,90,100)", "as": "GS10"
+        }
+      ],
+      "layer":[
+        {
+          "mark":{"type": "text","fontSize": 70, "font": "Courier", "opacity": 0.01, "dy":-200},
+          "encoding": {
+            "text":{"field":"GS1", "type": "nominal"}
+          }
+        },
+        {
+          "mark":{"type": "text","fontSize": 70, "font": "Courier", "opacity": 0.01, "dy":-157},
+          "encoding": {
+            "text":{"field":"GS2", "type": "nominal"}
+          }
+        },
+        {
+          "mark":{"type": "text","fontSize": 70, "font": "Courier", "opacity": 0.01, "dy":-114},
+          "encoding": {
+            "text":{"field":"GS3", "type": "nominal"}
+          }
+        },
+        {
+          "mark":{"type": "text","fontSize": 70, "font": "Courier", "opacity": 0.01, "dy":-71},
+          "encoding": {
+            "text":{"field":"GS4", "type": "nominal"}
+          }
+        },
+        {
+          "mark":{"type": "text","fontSize": 70, "font": "Courier", "opacity": 0.01, "dy":-28},
+          "encoding": {
+            "text":{"field":"GS5", "type": "nominal"}
+          }
+        },
+        {
+          "mark":{"type": "text","fontSize": 70, "font": "Courier", "opacity": 0.01, "dy":15},
+          "encoding": {
+            "text":{"field":"GS6", "type": "nominal"}
+          }
+        },
+        {
+          "mark":{"type": "text","fontSize": 70, "font": "Courier", "opacity": 0.01, "dy":58},
+          "encoding": {
+            "text":{"field":"GS7", "type": "nominal"}
+          }
+        },
+        {
+          "mark":{"type": "text","fontSize": 70, "font": "Courier", "opacity": 0.01, "dy":101},
+          "encoding": {
+            "text":{"field":"GS8", "type": "nominal"}
+          }
+        },
+        {
+          "mark":{"type": "text","fontSize": 70, "font": "Courier", "opacity": 0.01, "dy":144},
+          "encoding": {
+            "text":{"field":"GS9", "type": "nominal"}
+          }
+        },
+        {
+          "mark":{"type": "text","fontSize": 70, "font": "Courier", "opacity": 0.01, "dy":187},
+          "encoding": {
+            "text":{"field":"GS10", "type": "nominal"}
+          }
+        }
+      ]
+      
+    }
+  ],
+  "config":{"view":{"stroke":"transparent"}, "customFormatTypes": true}
+  
+}
