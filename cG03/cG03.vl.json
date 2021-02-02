@@ -1,0 +1,112 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "data": {"url":"https://raw.githubusercontent.com/mdeagen/mm-charts-data/master/cG03/data/trajectory.csv"},
+  "transform": [
+    {"filter":"datum.iElectron < 51"}
+  ],
+  "vconcat":[
+    {
+      "hconcat": [
+        {
+          "height":300,
+          "width":300,
+          "transform": [
+            {"filter":{"selection":"brush2"}}
+          ],
+          "selection": {
+            "zoom":{"type": "interval","bind": "scales"},
+            "highlight1":{"type": "single","on":"mouseover","empty": "all","clear":"mouseout","fields": ["iElectron"]}
+          },
+          "mark": {"type": "point","filled": true},
+          "encoding": {
+            "x": {"field": "ix", "type": "quantitative","axis":null, "scale":{"domain":[0,250],"nice":false}},
+            "y": {"field": "iz", "type": "quantitative", "scale":{"domain":[0,250],"nice":false}},
+            "color":{"field":"iz","type": "quantitative", "legend":null},
+            "opacity":{
+              "condition":{
+                "test":{"and": [{"selection":"brush"},{"selection":"highlight1"},{"selection":"highlight2"},{"selection":"highlight3"}]},"value":0.5
+              },"value":0
+            }
+          }
+        },
+        {
+          "vconcat":[
+            {
+              "height":50,
+              "width":300,
+              "selection": {
+                "brush2":{"type": "interval","encodings": ["x"]}
+              },
+              "mark":{"type":"tick"},
+              "encoding": {
+                "x":{"field":"iElectron","type": "quantitative", "scale":{"padding":20, "nice":false}, "axis":{"title":"Electron ID"}}
+              }
+            },
+            {
+              "height":50,
+              "width":300,
+              "selection": {
+                "brush":{"type": "interval","encodings": ["x"]}
+              },
+              "mark":"tick",
+              "encoding": {
+                "x":{"field":"t","type": "quantitative", "scale":{"padding":20, "nice":false}, "axis":{"title":"time [s]","format":"e"}}
+              }
+            }
+          ]
+          
+        }
+      ]
+    },
+    {
+      "hconcat":[
+        {
+          "height":300,
+          "width":300,
+          "transform": [
+            {"filter":{"selection":"brush2"}}
+          ],
+          "selection": {
+            "zoom":{"type": "interval","bind": "scales"},
+            "highlight2":{"type": "single","on":"mouseover","empty": "all","clear":"mouseout","fields": ["iElectron"]}
+          },
+          "mark": {"type": "point","filled": true},
+          "encoding": {
+            "x": {"field": "ix", "type": "quantitative", "scale":{"domain":[0,250],"nice":false}},
+            "y": {"field": "iy", "type": "quantitative", "scale":{"domain":[0,250],"nice":false}},
+            "color":{"field":"iz","type": "quantitative"},
+            "opacity":{
+              "condition":{
+                "test":{"and": [{"selection":"brush"},{"selection":"highlight1"},{"selection":"highlight2"},{"selection":"highlight3"}]},"value":0.5
+              },"value":0
+            }
+          }
+        },
+        {
+          "height":300,
+          "width":300,
+          "transform": [
+            {"filter":{"selection":"brush2"}}
+          ],
+          "selection": {
+            "zoom":{"type": "interval","bind": "scales"},
+            "highlight3":{"type": "single","on":"mouseover","empty": "all","clear":"mouseout","fields": ["iElectron"]}
+          },
+          "mark": {"type": "point","filled": true},
+          "encoding": {
+            "x": {"field": "iz", "type": "quantitative", "scale":{"domain":[0,250],"nice":false}},
+            "y": {"field": "iy", "type": "quantitative", "axis":null, "scale":{"domain":[0,250],"nice":false}},
+            "color":{"field":"iz","type": "quantitative"},
+            "opacity":{
+              "condition":{
+                "test":{"and": [{"selection":"brush"},{"selection":"highlight1"},{"selection":"highlight2"},{"selection":"highlight3"}]},"value":0.5
+              },"value":0
+            }
+          }
+        }
+      ]
+    }
+    
+  ],
+  "config": {"axis": {"titleFontSize":20,"labelFontSize":16, "labelFlush": false,"grid": false},"padding":50}
+}
