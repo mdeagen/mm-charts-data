@@ -1,16 +1,7 @@
 ### cG01
 
-#### Title:
-
-
-
-#### Description:
-
-
-
-#### Spec:
-
 
 
 #### Link on Observable:
 
+https://observablehq.com/@mdeagen/cg01
