@@ -39,7 +39,12 @@
               },
               "mark":{"type":"tick"},
               "encoding": {
-                "x":{"field":"iElectron","type": "quantitative", "scale":{"padding":20, "nice":false}, "axis":{"title":"Electron ID"}}
+                "x":{"field":"iElectron","type": "quantitative", "scale":{"padding":20, "nice":false}, "axis":{"title":"Electron ID"}},
+                "color":{
+                  "condition":{
+                    "selection":"brush2","value":"steelblue"
+                  },"value":"#ddd"
+                }
               }
             },
             {
@@ -50,7 +55,12 @@
               },
               "mark":"tick",
               "encoding": {
-                "x":{"field":"t","type": "quantitative", "scale":{"padding":20, "nice":false}, "axis":{"title":"time [s]","format":"e"}}
+                "x":{"field":"t","type": "quantitative", "scale":{"padding":20, "nice":false}, "axis":{"title":"time [s]","format":"e"}},
+                "color":{
+                  "condition":{
+                    "selection":"brush","value":"steelblue"
+                  },"value":"#ddd"
+                }
               }
             }
           ]
