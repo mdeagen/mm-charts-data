@@ -2,7 +2,6 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "data": {"url":"https://raw.githubusercontent.com/mdeagen/mm-charts-data/master/cG02/data/MetamaterialbyGrowth_3Dtetragonaldata.csv"},
   "transform": [
-    {"sample":5000},
     {
       "window": [{
         "op":"rank",
@@ -33,8 +32,8 @@
       "width":400,
       "mark":{"type":"rect"},
       "encoding":{
-        "x":{"field":"Eeffx","bin":{"maxbins": 40},"type":"quantitative"},
-        "y":{"field":"nuxy","bin":{"maxbins": 40},"type":"quantitative"},
+        "x":{"field":"Eeffx","bin":{"maxbins": 40},"type":"quantitative", "title":"Young's modulus"},
+        "y":{"field":"nuxy","bin":{"maxbins": 40},"type":"quantitative", "title":"Poisson's ratio"},
         "color":{"aggregate":"count","type": "quantitative"}
       }
     },
