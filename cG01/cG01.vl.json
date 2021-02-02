@@ -1,5 +1,5 @@
 {
-  "data": {"url": "https://raw.githubusercontent.com/mdeagen/mm-charts-data/master/cG01/data/Caltech2Dabridged.csv"},
+  "data": {"name":"thisdata"},
   "title":{"text":["Instructions: Click-drag/mousewheel to create or move around a selection brush, SHIFT+click-drag/mousewheel to translate/zoom. "],
             "orient":"bottom", "dy":15},
   "transform": [
