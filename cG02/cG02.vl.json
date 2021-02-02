@@ -1,0 +1,55 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "data": {"url":"https://raw.githubusercontent.com/mdeagen/mm-charts-data/master/cG02/data/MetamaterialbyGrowth_3Dtetragonaldata.csv"},
+  "transform": [
+    {"sample":5000},
+    {
+      "window": [{
+        "op":"rank",
+        "as": "rank"
+      }]
+    },
+    {"calculate": "ceil(datum.rank / 100)", "as": "instructionset"},
+    {"calculate": "1 / datum.S11", "as": "Eeffx"},
+    {"calculate": "1 / datum.S22", "as": "Eeffy"},
+    {"calculate": "1 / datum.S33", "as": "Eeffz"},
+    {"calculate": "-1 * datum.S21 / datum.S11", "as": "nuxy"},
+    {"calculate": "-1 * datum.S32 / datum.S22", "as": "nuyz"},
+    {"calculate": "-1 * datum.S13 / datum.S33", "as": "nuzx"},
+    {"calculate": "1 / datum.S44", "as": "Geffyz"},
+    {"calculate": "1 / datum.S55", "as": "Geffzx"},
+    {"calculate": "1 / datum.S66", "as": "Geffxy"},
+    {
+      "fold": ["corner3", "cross5", "cross6", "cross4", "line2", "corner2", "t3", "t4"],
+      "as": ["block","freq"]
+    }
+  ],
+  "hconcat":[
+    {
+      "selection": {
+        "mybrush":{"type": "interval"}
+      },
+      "height":400,
+      "width":400,
+      "mark":{"type":"rect"},
+      "encoding":{
+        "x":{"field":"Eeffx","bin":{"maxbins": 40},"type":"quantitative"},
+        "y":{"field":"nuxy","bin":{"maxbins": 40},"type":"quantitative"},
+        "color":{"aggregate":"count","type": "quantitative"}
+      }
+    },
+    {
+      "transform": [{
+        "filter":{"selection":"mybrush"}
+      }],
+      "height":400,
+      "width":250,
+      "mark":{"type":"arc"},
+      "encoding":{
+        "theta":{"aggregate":"mean","field":"freq","type":"quantitative"},
+        "color":{"field":"block","type":"nominal"}
+      },"view": {"stroke":null}
+    }
+  ],
+  "config":{"padding":{"left":50, "bottom":50, "top":20}}
+}
