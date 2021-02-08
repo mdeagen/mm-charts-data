@@ -1,0 +1,86 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "data": {"url": "https://raw.githubusercontent.com/mdeagen/mm-charts-data/master/cG04/data/Struct_idx_1024.csv"},
+  "transform": [
+    {"filter":{"field": "eig_idx","equal":8}}
+  ],
+  "vconcat":[
+    {
+      "height":400,
+      "width":670,
+      "layer":[
+        {
+          "selection": {
+            "brush":{"type": "interval"}
+          },
+          "mark":{"type": "rect", "filled": true},
+          "encoding": {
+            "x": {"field": "wavevector_idx1", "bin":{"maxbins": 51},"type": "quantitative", "scale":{"nice":false}},
+            "y": {"field": "wavevector_idx2", "bin":{"maxbins": 51}, "type": "quantitative", "scale":{"nice":false}},
+            "color": {"aggregate":"mean","field": "frequency", "type": "quantitative", "legend":null}
+          }
+        },
+        {
+          "transform": [
+            {"sample": 1}
+          ],
+          "mark":{"type": "rule", "color":"firebrick", "strokeDash":[10,5]},
+          "encoding": {
+            "y":{"datum":26}
+          }
+        }
+      ]
+      
+    },
+    {
+      "hconcat": [
+        {
+          "height":300,
+          "width":300,
+          "selection": {
+            "zoom":{"type": "interval","bind": "scales"}
+          },
+          "mark": {"type":"point","filled": true},
+          "encoding": {
+            "x": {"field": "wavevector_idx1", "type": "quantitative"},
+            "y": {"field": "frequency", "type": "quantitative","scale":{"zero":false}},
+            "color":{
+              "condition":{
+                "selection":"brush","value":"steelblue"
+              },"value":"#777"
+            },
+            "opacity":{
+              "condition":{
+                "selection":"brush","value":0.5
+              },"value":0.1
+            }
+          }
+        },
+        {
+          "height":300,
+          "width":300,
+          "selection": {
+            "zoom":{"type": "interval","bind": "scales"}
+          },
+          "mark": {"type":"point","filled": true},
+          "encoding": {
+            "x": {"field": "wavevector_idx2", "type": "quantitative", "scale":{"reverse":true}},
+            "y": {"field": "frequency", "type": "quantitative","scale":{"zero":false}},
+            "color":{
+              "condition":{
+                "selection":"brush","value":"steelblue"
+              },"value":"#777"
+            },
+            "opacity":{
+              "condition":{
+                "selection":"brush","value":0.4
+              },"value":0.1
+            }
+          }
+        }
+      ]
+    }
+    
+  ]
+  
+}
