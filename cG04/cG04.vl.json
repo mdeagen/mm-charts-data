@@ -37,9 +37,6 @@
         {
           "height":300,
           "width":300,
-          "selection": {
-            "zoom":{"type": "interval","bind": "scales"}
-          },
           "mark": {"type":"point","filled": true},
           "encoding": {
             "x": {"field": "wavevector_idx1", "type": "quantitative"},
@@ -59,9 +56,6 @@
         {
           "height":300,
           "width":300,
-          "selection": {
-            "zoom":{"type": "interval","bind": "scales"}
-          },
           "mark": {"type":"point","filled": true},
           "encoding": {
             "x": {"field": "wavevector_idx2", "type": "quantitative", "scale":{"reverse":true}},
