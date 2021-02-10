@@ -1,0 +1,173 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "data": {"url": "https://raw.githubusercontent.com/mdeagen/mm-charts-data/master/cG04/data/Struct_idx_2.csv", "format":{"parse":{"frequency":"number","eig_idx":"number"}}},
+  
+  "vconcat":[
+    {
+      "hconcat":[
+        {
+          "transform": [
+            {"filter":{"selection":"eig_select"}}
+          ],
+          "height":400,
+          "width":400,
+          "mark":{"type": "point", "filled": true},
+          "encoding": {
+            "x": {"field": "wavevector_idx1", "type": "quantitative", "scale":{"nice":false},"axis":null},
+            "y": {"field": "wavevector_idx2", "type": "quantitative", "scale":{"nice":false}, "axis":null},
+            "color":{
+              "condition":{
+                "selection":"freq_select","field":"eig_idx","type": "nominal"
+              },"value":"#777"
+            },
+            "opacity":{
+              "condition":{
+                "selection":"freq_select","value":1
+              },"value":0.01
+            }
+          },
+          "view": {"stroke":null}
+        },
+        {
+          "height":400,
+          "width":80,
+          "selection": {
+            "eig_select":{"type": "multi", "fields": ["eig_idx"]}
+          },
+          "mark":{"type": "bar", "width":30},
+          "encoding": {
+            "y":{"aggregate":"distinct","field":"eig_idx","type": "ordinal","sort":"descending", "title":"Manifold Index", "axis":null},
+            "color":{
+              "condition":{
+                "selection":"eig_select","field":"eig_idx","type": "nominal"
+              },"value":"#ddd"
+            },
+            "tooltip":[
+              {"field":"eig_idx","type": "quantitative", "title":"Manifold Index"}
+            ]
+          },"view": {"stroke":null}
+        },
+        {
+          "transform": [
+            {"filter":{"selection":"eig_select"}}
+          ],
+          "height":400,
+          "width":50,
+          "selection": {
+            "freq_select":{"type": "interval","encodings": ["y"],"zoom": "wheel![!event.shiftKey]", "translate": "[mousedown[!event.shiftKey], mouseup] > mousemove", "on": "[mousedown[!event.shiftKey], mouseup] > mousemove"},
+            "panzoom":{"type": "interval","bind": "scales","zoom": "wheel![event.shiftKey]", "translate":false}
+          },
+          "mark":{"type": "tick", "orient": "horizontal", "width":30, "opacity":0.2},
+          "encoding": {
+            "y":{"field":"frequency","type": "quantitative", "sort":"-y", "title":"Frequency", "axis":{"labelBound":true}, "scale":{"zero":false,"nice":false}},
+            "color":{"field":"eig_idx","type": "nominal", "legend":null}
+          }
+        }
+      ]
+    },
+    {
+      "transform": [
+        {"joinaggregate": 
+          [{"op": "min","field": "frequency","as": "minFreq"}],"groupby": ["eig_idx"]
+        },
+        {"joinaggregate": 
+          [{"op": "max","field": "frequency","as": "maxFreq"}],"groupby": ["eig_idx"]
+        },
+        {"window": 
+          [{"op":"lag","field": "maxFreq","as": "compMax"}],"sort": [{"field": "eig_idx","order":"ascending"}]
+        },
+        {"window": 
+          [{"op":"lag","field": "eig_idx","as": "compEig"}],"sort": [{"field": "eig_idx","order":"ascending"}]
+        }
+      ],
+      "hconcat": [
+        {
+          "layer":[
+            {
+              "transform": [
+                {"filter":{"and":["datum.minFreq > datum.compMax","datum.eig_idx != datum.compEig","datum.eig_idx > 1"]}},
+                {"calculate": "datum.minFreq - datum.compMax", "as":"BGwidth"}
+              ],
+              "mark":{"type": "rect","opacity":0.2, "color":"black"},
+              "encoding": {
+                "y":{"field":"compMax","type": "quantitative", "axis":null},
+                "y2":{"field":"minFreq"},
+                "tooltip":[
+                  {"field":"minFreq","type": "quantitative", "title":"Band Gap Min", "format":".2f"},
+                  {"field":"compMax","type": "quantitative", "title":"Band Gap Max", "format":".2f"},
+                  {"field":"BGwidth","type": "quantitative", "title":"Band Gap Width", "format":".2f"}
+                ]
+              }
+            },
+            {
+              "height":300,
+              "width":325,
+              "selection": {
+                "zoom":{"type": "interval","bind": "scales", "encodings": ["y"]}
+              },
+              "mark": {"type":"point","filled": true, "clip": true},
+              "encoding": {
+                "x": {"field": "wavevector_idx1", "type": "quantitative","scale":{"zero":false, "nice":false}, "axis":null},
+                "y": {"field": "frequency", "type": "quantitative", "scale":{"zero":false}, "axis":null},
+                "color":{
+                  "condition":{
+                    "test":{"and": [{"selection":"freq_select"},{"selection":"eig_select"}]},"field":"eig_idx","type": "nominal"
+                  },"value":"#777"
+                },
+                "opacity":{
+                  "condition":{
+                    "test":{"and": [{"selection":"freq_select"},{"selection":"eig_select"}]},"value":0.4
+                  },"value":0.04
+                }
+              }
+            }
+          ]
+        },
+        {
+          "layer":[
+            {
+              "transform": [
+                {"filter":{"and":["datum.minFreq > datum.compMax","datum.eig_idx != datum.compEig","datum.eig_idx > 1"]}},
+                {"calculate": "datum.minFreq - datum.compMax", "as":"BGwidth"}
+              ],
+              "mark":{"type": "rect","opacity":0.2, "color":"black"},
+              "encoding": {
+                "y":{"field":"compMax","type": "quantitative","axis":null},
+                "y2":{"field":"minFreq"},
+                "tooltip":[
+                  {"field":"minFreq","type": "quantitative", "title":"Band Gap Min", "format":".2f"},
+                  {"field":"compMax","type": "quantitative", "title":"Band Gap Max", "format":".2f"},
+                  {"field":"BGwidth","type": "quantitative", "title":"Band Gap Width", "format":".2f"}
+                ]
+              }
+            },
+            {
+              "height":300,
+              "width":325,
+              "selection": {
+                "zoom":{"type": "interval","bind": "scales", "encodings": ["y"]}
+              },
+              "mark": {"type":"point","filled": true, "clip": true},
+              "encoding": {
+                "x": {"field": "wavevector_idx2", "type": "quantitative", "scale":{"reverse":true,"zero":false, "nice":false}, "axis":null},
+                "y": {"field": "frequency", "type": "quantitative", "scale":{"zero":false}, "title":"Frequency", "axis":null},
+                "color":{
+                  "condition":{
+                    "test":{"and": [{"selection":"freq_select"},{"selection":"eig_select"}]},"field":"eig_idx","type": "nominal"
+                  },"value":"#777"
+                },
+                "opacity":{
+                  "condition":{
+                    "test":{"and": [{"selection":"freq_select"},{"selection":"eig_select"}]},"value":0.4
+                  },"value":0.04
+                }
+              }
+            }
+          ]
+          
+        }
+      ]
+    }
+  ],
+  "config": {"axis": {"grid": false,"titleFontSize":20, "labelFontSize":14}}
+}
