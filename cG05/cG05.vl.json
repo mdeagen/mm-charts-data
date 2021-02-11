@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "data": {"url": "Iso_struct_idx_3.csv", "format":{"parse":{"wavevector_x":"number","wavevector_y":"number"}}},
+  "data": {"url": "https://raw.githubusercontent.com/mdeagen/mm-charts-data/master/cG05/data/Iso_struct_idx_3.csv", "format":{"parse":{"wavevector_x":"number","wavevector_y":"number"}}},
   "transform": [
     {"filter":{"field": "wavevector_x","lt":52}},
     {"filter":{"field": "wavevector_y","lt":52}}
@@ -9,13 +9,14 @@
     {
       "transform": [
         {"filter":{"selection":"brush1"}},
-        {"filter":{"selection":"brush2"}}
+        {"filter":{"selection":"brush2"}},
+        {"calculate": "toString(datum.frequency) + '_' + toString(datum.path_id)","as": "unique_path"}
       ],
       "mark": "line",
       "encoding": {
         "x": {"field": "wavevector_x", "type": "quantitative"},
         "y": {"field": "wavevector_y", "type": "quantitative"},
-        "detail":{"field":"path_id","type": "quantitative"},
+        "detail":{"field":"unique_path","type": "quantitative"},
         "order":{"field":"sequence_id","type": "quantitative"},
         "color":{"field":"eig_idx","type": "nominal", "scale":{"domain":[1,2,3,4,5,6,7,8]}}
       }
