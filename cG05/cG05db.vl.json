@@ -7,15 +7,16 @@
   ],
   "vconcat":[
     {
+      "width":500,
+      "height":500,
       "transform": [
         {"filter":{"selection":"brush1"}},
-        {"filter":{"selection":"brush2"}},
-        {"calculate": "toString(datum.frequency) + '_' + toString(datum.path_id)","as": "unique_path"}
+        {"filter":{"selection":"brush2"}}
       ],
-      "mark": "point",
+      "mark": {"type": "point","clip": true},
       "encoding": {
-        "x": {"field": "wavevector_x", "type": "quantitative"},
-        "y": {"field": "wavevector_y", "type": "quantitative"},
+        "x": {"field": "wavevector_x", "type": "quantitative", "scale":{"domain":[0,3.14], "nice":false}},
+        "y": {"field": "wavevector_y", "type": "quantitative", "scale":{"domain":[0,3.14], "nice":false}},
         "color":{"field":"eig_idx","type": "nominal", "scale":{"domain":[1,2,3,4,5,6,7,8]}},
         "tooltip":[
           {"field":"frequency","type": "quantitative"},
@@ -25,29 +26,79 @@
       }
     },
     {
-      "transform": [
-        {"filter":{"selection":"brush2"}}
-      ],
-      "selection": {
-        "brush1":{"type": "interval","encodings": ["x"]}
-      },
-      "mark":"tick",
-      "encoding": {
-        "x":{"field":"frequency","type": "quantitative"}
-      }
+      "hconcat": [
+        {
+          "transform": [
+            {"filter":{"selection":"brush2"}}
+          ],
+          "selection": {
+            "brush1":{"type": "interval","encodings": ["x"]}
+          },
+          "mark":"tick",
+          "encoding": {
+            "x":{"field":"frequency","type": "quantitative"}
+          }
+        },
+        {
+          "transform": [
+            {"filter":{"selection":"brush1"}}
+          ],
+          "selection": {
+            "brush2":{"type": "interval","encodings": ["x"]}
+          },
+          "mark":"tick",
+          "encoding": {
+            "x":{"field":"path_id","type": "quantitative"}
+          }
+        }
+      ]
     },
+    
     {
-      "transform": [
-        {"filter":{"selection":"brush1"}}
-      ],
-      "selection": {
-        "brush2":{"type": "interval","encodings": ["x"]}
-      },
-      "mark":"tick",
-      "encoding": {
-        "x":{"field":"path_id","type": "quantitative"}
-      }
+      "hconcat": [
+        {
+          "transform": [
+            {"sample": 3000}
+          ],
+          "mark": {"type": "point","clip": true},
+          "encoding": {
+            "x": {"field": "wavevector_x", "type": "quantitative", "scale":{"domain":[0,3.14], "nice":false}},
+            "y": {"field": "frequency", "type": "quantitative"},
+            "color":{
+              "condition":{
+                "selection":"brush1","field":"eig_idx","type": "nominal"
+              },"value":"#ddd"
+            },
+            "opacity":{
+              "condition":{
+                "selection":"brush1","value":1
+              },"value":0.3
+            }
+          }
+        },
+        {
+          "transform": [
+            {"sample": 3000}
+          ],
+          "mark": {"type": "point","clip": true},
+          "encoding": {
+            "x": {"field": "wavevector_y", "type": "quantitative", "scale":{"domain":[0,3.14], "nice":false}},
+            "y": {"field": "frequency", "type": "quantitative"},
+            "color":{
+              "condition":{
+                "selection":"brush1","field":"eig_idx","type": "nominal"
+              },"value":"#ddd"
+            },
+            "opacity":{
+              "condition":{
+                "selection":"brush1","value":1
+              },"value":0.3
+            }
+          }
+        }
+      ]
     }
+    
   ]
   
 }
