@@ -1,0 +1,53 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "data": {"url": "https://raw.githubusercontent.com/mdeagen/mm-charts-data/master/cG05/data/Iso_struct_idx_3.csv", "format":{"parse":{"wavevector_x":"number","wavevector_y":"number"}}},
+  "transform": [
+    {"filter":{"field": "wavevector_x","lt":52}},
+    {"filter":{"field": "wavevector_y","lt":52}}
+  ],
+  "vconcat":[
+    {
+      "transform": [
+        {"filter":{"selection":"brush1"}},
+        {"filter":{"selection":"brush2"}},
+        {"calculate": "toString(datum.frequency) + '_' + toString(datum.path_id)","as": "unique_path"}
+      ],
+      "mark": "point",
+      "encoding": {
+        "x": {"field": "wavevector_x", "type": "quantitative"},
+        "y": {"field": "wavevector_y", "type": "quantitative"},
+        "color":{"field":"eig_idx","type": "nominal", "scale":{"domain":[1,2,3,4,5,6,7,8]}},
+        "tooltip":[
+          {"field":"frequency","type": "quantitative"},
+          {"field":"path_id","type": "quantitative"},
+          {"field":"sequence_id","type": "quantitative"}
+        ]
+      }
+    },
+    {
+      "transform": [
+        {"filter":{"selection":"brush2"}}
+      ],
+      "selection": {
+        "brush1":{"type": "interval","encodings": ["x"]}
+      },
+      "mark":"tick",
+      "encoding": {
+        "x":{"field":"frequency","type": "quantitative"}
+      }
+    },
+    {
+      "transform": [
+        {"filter":{"selection":"brush1"}}
+      ],
+      "selection": {
+        "brush2":{"type": "interval","encodings": ["x"]}
+      },
+      "mark":"tick",
+      "encoding": {
+        "x":{"field":"path_id","type": "quantitative"}
+      }
+    }
+  ]
+  
+}
