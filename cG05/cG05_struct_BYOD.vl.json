@@ -108,7 +108,7 @@
       "title":{"text":"Select structure ID by clicking a rectangle below:", "fontSize":14},
       "width":650,
       "selection": {
-        "structure_select":{"type": "single","empty": "none", "fields": ["struct_idx"],"init": {"struct_idx":1}}
+        "structure_select":{"type": "single","empty": "none", "fields": ["struct_idx"]}
       },
       "mark":{"type": "bar","yOffset":-150},
       "encoding": {
