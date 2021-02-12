@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "data": {"url": "N_struct10_isofrequency_flattened.txt", "format":{"type": "tsv","parse":{"wavevector_x":"number","wavevector_y":"number","sequence_id":"number", "frequency":"number", "eig_idx":"number", "struct_idx":"number"}}},
+  "data": {"url": "https://raw.githubusercontent.com/mdeagen/mm-charts-data/master/cG05/data/N_struct10_isofrequency_flattened.txt", "format":{"type": "tsv","parse":{"wavevector_x":"number","wavevector_y":"number","sequence_id":"number", "frequency":"number", "eig_idx":"number", "struct_idx":"number"}}},
   "transform": [
     {"calculate": "toString(datum.frequency) + '_' + toString(datum.path_id)","as": "unique_path"},
     {"joinaggregate": 
