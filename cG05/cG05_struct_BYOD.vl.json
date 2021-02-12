@@ -23,7 +23,7 @@
           "encoding": {
             "x": {"field": "wavevector_x", "type": "quantitative", "scale":{"domain":[-3.14,3.14], "nice":false, "padding":10}, "axis":{"format":"r"}},
             "y": {"field": "frequency", "type": "quantitative", "title":"Frequency","scale":{"padding":5, "nice":false}},
-            "detail":{"field":"frequency","type": "quantitative"},
+            "detail":{"field":"unique_path","type": "quantitative"},
             "color":{"field":"eig_idx","type": "nominal"}
           }
         },
@@ -39,8 +39,8 @@
           "mark": {"type": "line","clip": true, "opacity":0.3},
           "encoding": {
             "x": {"field": "wavevector_y", "type": "quantitative", "scale":{"domain":[0,3.14], "nice":false, "padding":10},"axis":{"format":"r"}},
-            "y": {"field": "frequency", "type": "quantitative", "axis":null},
-            "detail":{"field":"frequency","type": "quantitative"},
+            "y": {"field": "frequency", "type": "quantitative", "axis":null,"scale":{"padding":5, "nice":false}},
+            "detail":{"field":"unique_path","type": "quantitative"},
             "color":{"field":"eig_idx","type": "nominal"}
           }
         }
@@ -108,7 +108,7 @@
       "title":{"text":"Select structure ID by clicking a rectangle below:", "fontSize":14},
       "width":650,
       "selection": {
-        "structure_select":{"type": "single","empty": "none", "fields": ["struct_idx"]}
+        "structure_select":{"type": "single","empty": "none", "fields": ["struct_idx"],"init": {"struct_idx":1}}
       },
       "mark":{"type": "bar","yOffset":-150},
       "encoding": {
