@@ -1,0 +1,130 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "padding":20,
+  "data": {"name":"mydata", "format":{"type": "tsv","parse":{"wavevector_x":"number","wavevector_y":"number","sequence_id":"number", "frequency":"number", "eig_idx":"number", "struct_idx":"number"}}},
+  "transform": [
+    {"calculate": "toString(datum.frequency) + '_' + toString(datum.path_id)","as": "unique_path"}
+  ],
+  "vconcat":[
+    {
+      
+      "title":{"text":"Select a frequency range by click-dragging (vertically) a selection brush in either of the plots directly below:","fontSize":14},
+      "hconcat": [
+        {
+          "height":350,
+          "width":400,
+          "transform": [
+            {"filter":{"selection":"structure_select"}}
+          ],
+          "selection": {
+            "brush1":{"type": "interval","encodings": ["y"], "empty": "none"}
+          },
+          "mark": {"type": "line","clip": true, "opacity":0.3},
+          "encoding": {
+            "x": {"field": "wavevector_x", "type": "quantitative", "scale":{"domain":[-3.14,3.14], "nice":false, "padding":10}, "axis":{"format":"r"}},
+            "y": {"field": "frequency", "type": "quantitative", "title":"Frequency","scale":{"padding":5, "nice":false}},
+            "detail":{"field":"frequency","type": "quantitative"},
+            "color":{"field":"eig_idx","type": "nominal"}
+          }
+        },
+        {
+          "height":350,
+          "width":250,
+          "transform": [
+            {"filter":{"selection":"structure_select"}}
+          ],
+          "selection": {
+            "brush1":{"type": "interval","encodings": ["y"], "empty": "none"}
+          },
+          "mark": {"type": "line","clip": true, "opacity":0.3},
+          "encoding": {
+            "x": {"field": "wavevector_y", "type": "quantitative", "scale":{"domain":[0,3.14], "nice":false, "padding":10},"axis":{"format":"r"}},
+            "y": {"field": "frequency", "type": "quantitative", "axis":null},
+            "detail":{"field":"frequency","type": "quantitative"},
+            "color":{"field":"eig_idx","type": "nominal"}
+          }
+        }
+      ]
+    },
+    {
+      "transform": [
+        {"filter":{"selection":"structure_select"}}
+      ],
+      "hconcat": [
+        {
+          "width":400,
+          "height":250,
+          "transform": [
+            {"filter":{"selection":"brush1"}}
+          ],
+          "selection": {
+            "highlight":{"type": "single","on":"mouseover","clear":"mouseout","fields": ["frequency"]}
+          },
+          "mark": {"type": "line","clip": true, "interpolate":"basis"},
+          "encoding": {
+            "x": {"field": "wavevector_x", "type": "quantitative", "scale":{"domain":[-3.14,3.14], "nice":false}},
+            "y": {"field": "wavevector_y", "type": "quantitative", "scale":{"domain":[0,3.14], "nice":false}},
+            "detail":{"field":"unique_path","type": "quantitative"},
+            "order":{"field":"sequence_id","type": "ordinal"},
+            "color":{"field":"eig_idx","type": "nominal", "scale":{"domain":[1,2,3,4,5,6,7,8]}, "legend":null},
+            "opacity":{
+              "condition":{
+                "selection":"highlight","value":0.7
+              },"value":0.1
+            },
+            "tooltip":[
+              {"field":"frequency","type": "quantitative"},
+              {"field":"path_id","type": "quantitative"},
+              {"field":"sequence_id","type": "quantitative"}
+            ]
+          }
+        },
+        {
+          "height":249,
+          "transform": [
+            {"filter":{"selection":"brush1"}}
+          ],
+          "selection": {
+            "highlight":{"type": "single","on":"mouseover","clear":"mouseout","fields": ["frequency"], "nearest": true}
+          },
+          "mark":"tick",
+          "encoding": {
+            "x":{"field":"eig_idx","type": "nominal", "scale":{"paddingOuter":1}, "title":"Manifold ID"},
+            "y":{"field":"frequency","type": "quantitative", "scale":{"zero":false,"nice":false,"padding":20}, "title":"Selected frequency values","axis":{"labelBound":true}},
+            "color":{"field":"eig_idx","type": "nominal"},
+            "opacity":{
+              "condition":{
+                "selection":"highlight","value":1
+              },"value":0
+            },
+            "tooltip":[
+              {"field":"frequency","type": "quantitative"}
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title":"Select structure ID below:",
+      "width":650,
+      "selection": {
+        "structure_select":{"type": "single","empty": "none", "fields": ["struct_idx"],"init": {"struct_idx":10}}
+      },
+      "mark":{"type": "bar","yOffset":-150},
+      "encoding": {
+        "x":{"aggregate":"distinct","field":"struct_idx","type": "quantitative", "stack":true, "axis":null},
+        "fillOpacity":{"field":"struct_idx","type": "nominal","legend":null},
+        "stroke":{
+          "condition":{
+            "selection":"structure_select","value":"black"
+          },"value":"white"
+        },
+        "tooltip":[
+          {"field":"struct_idx","type": "quantitative", "title":"Structure ID"}
+        ]
+      },
+      "view": {"stroke":null}
+    }
+  ],
+  "config": {"axis": {"titleFontSize":16, "labelFontSize":14}}
+}
