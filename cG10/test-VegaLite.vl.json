@@ -1,0 +1,12 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "data": {"url":"https://raw.githubusercontent.com/mdeagen/mm-charts-data/master/cG10/CTdata_tidied.csv"},
+  "width": 500,
+  "height": 400,
+  "mark": "point",
+  "encoding": {
+    "x":{"field":"C11","type": "quantitative"},
+    "y":{"field":"C12","type": "quantitative"},
+    "color":{"field":"Label","type": "nominal"}
+  }
+}

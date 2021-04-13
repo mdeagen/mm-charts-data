@@ -1,0 +1,122 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "A contour plot example, overlaying a density estimate on scatter plot points.",
+  "width": 500,
+  "height": 400,
+  "padding": 5,
+  "autosize": "pad",
+  "signals": [
+    {
+      "name": "bandwidth",
+      "value": 20,
+      "bind": {"input": "range", "min": 0, "max": 100, "step": 5}
+    }
+  ],
+  "data": [
+    {
+      "name": "source",
+      "url": "https://raw.githubusercontent.com/mdeagen/mm-charts-data/master/cG10/CTdata_tidied.csv",
+      "format": {"type": "csv", "delimiter": ","},
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "isValid(datum[\"C11\"]) && isFinite(+datum[\"C11\"]) && isValid(datum[\"C12\"]) && isFinite(+datum[\"C12\"])"
+        },
+        {
+          "type": "formula","as":"Poisson","expr": "datum.C12 / datum.C11"
+        }
+      ]
+    },
+    {
+      "name": "density",
+      "source": "source",
+      "transform": [
+        
+        {
+          "type": "kde2d",
+          "groupby": ["Label"],
+          "size": [{"signal": "width"}, {"signal": "height"}],
+          "x": {"expr": "scale('x', datum.C11)"},
+          "y": {"expr": "scale('y', datum.Poisson)"},
+          "bandwidth": {"signal": "[bandwidth, bandwidth]"}
+        }
+      ]
+    },
+    {
+      "name": "contours",
+      "source": "density",
+      "transform": [
+        {
+          "type": "isocontour",
+          "field": "grid",
+          "resolve": "independent",
+          "levels": 1
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "x",
+      "type": "linear",
+      "round": true,
+      "nice": true,
+      "zero": true,
+      "domain": {"data": "source", "field": "C11"},
+      "range": "width"
+    },
+    {
+      "name": "y",
+      "type": "linear",
+      "round": true,
+      "nice": true,
+      "zero": true,
+      "domain": {"data": "source", "field": "Poisson"},
+      "range": "height"
+    },
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": {
+        "data": "source",
+        "field": "Label",
+        "sort": {"order": "ascending"}
+      },
+      "range": "category"
+    }
+  ],
+  "axes": [
+    {
+      "scale": "x",
+      "grid": true,
+      "domain": false,
+      "orient": "bottom",
+      "tickCount": 5,
+      "title": "C11"
+    },
+    {
+      "scale": "y",
+      "grid": true,
+      "domain": false,
+      "orient": "left",
+      "titlePadding": 5,
+      "title": "C12/C11"
+    }
+  ],
+  "legends": [{"symbolType": "circle","fill": "color","symbolOpacity":0.5}],
+  "marks": [
+    {
+      "type": "path",
+      "clip": true,
+      "from": {"data": "contours"},
+      "encode": {
+        "enter": {
+          "fillOpacity": {"value": 0.5},
+          "fill": {"scale": "color", "field": "Label"}
+        }
+      },
+      "transform": [{"type": "geopath", "field": "datum.contour"}]
+    }
+  ],
+  "config": {"axis":{"titleFontSize":24, "labelFontSize":16}, "legend":{"labelFontSize":16, "symbolSize":100}}
+}
